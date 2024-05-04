@@ -4,7 +4,7 @@ const isProtectedRoute = createRouteMatcher(['/', '/api/webhooks/clerk', '/api/w
 
 export default clerkMiddleware((auth, req) => {
   if (isProtectedRoute(req)) auth().protect();
-})
+}, { debug: true })
 
 export const config = {
   matcher: ['/((?!.*\\..*|_next).*)', '/', '/(api|trpc)(.*)'],

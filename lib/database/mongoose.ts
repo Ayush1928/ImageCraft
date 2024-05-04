@@ -26,7 +26,8 @@ export const connectToDatabase = async () => {
       dbName: 'ImageCraft', bufferCommands: false 
     })
 
-  cached.conn = await cached.promise;
+    cached.conn = await cached.promise;
+    if(cached.conn) console.log("Connected to database.")
 
   return cached.conn;
 }
